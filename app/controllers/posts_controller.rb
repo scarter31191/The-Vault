@@ -36,7 +36,11 @@ class PostsController < ApplicationController
         end
     end
 
-    def destroy
+    # delete action not working redirects to show page instead
+    def destroy 
+        @post = Post.find(params[:id])
+        @post.destroy
+        redirect_to post_path, 
     end
 
     private

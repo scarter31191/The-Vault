@@ -1,9 +1,11 @@
 <h1> The Vault</h1>
 
-<% @posts.each do |p| %>
-    <h2><%= link_to p.title, p %></h2>
-    <p><%= p.content %></p>
-    <p><%= link_to "Edit", edit_post_path(p) %></p>
+<% @posts.each do |post| %>
+    <h2><%= link_to post.title, post %></h2>
+    <p><%= post.content %></p>
+    <p><%= link_to "Edit", edit_post_path(post) %> | 
+        <%= link_to 'Delete',  post,  method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
     <hr />
 <% end %>
 
