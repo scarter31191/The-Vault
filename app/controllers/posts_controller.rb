@@ -36,11 +36,11 @@ class PostsController < ApplicationController
         end
     end
 
-    # delete action not working redirects to show page instead
+    # delete bug
     def destroy 
         @post = Post.find(params[:id])
         @post.destroy
-        redirect_to post_path, 
+        redirect_to posts_path, :notice => "Seal Has Been Removed"
     end
 
     private
